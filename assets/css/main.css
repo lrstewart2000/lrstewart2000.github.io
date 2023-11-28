@@ -22,6 +22,7 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+	clear: both;
 	vertical-align: baseline;}
 
 article, aside, details, figcaption, figure,
@@ -461,6 +462,7 @@ input, select, textarea {
 		}
 
 		.row > .col-12 {
+			width: 100%;
 			width: 100%;
 		}
 
@@ -2595,13 +2597,16 @@ input, select, textarea {
 		}
 
 		.image.fit {
-			display: block;
+			display: inline-block;
+			text-align: center;
 			margin: 0 0 2em 0;
 			width: 100%;
 		}
 
 			.image.fit img {
-				width: 100%;
+				width: 60%;
+				display: inline-block;
+				text-align: center;
 			}
 
 		.image.main {

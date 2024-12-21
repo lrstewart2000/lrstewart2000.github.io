@@ -4,41 +4,72 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
 		<title>About me</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.inner-content {
+				display: flex;
+				align-items: center; /* Vertically align image and paragraph */
+			}
+
+			.inner h1 {
+				margin-bottom: 20px; /* Space between h1 and the content below */
+			}
+
+			.inner .text-image-container {
+				display: flex;
+				align-items: center; /* Vertically align text and image */
+			}
+
+			.inner p {
+				margin-left: 20px; /* Space between paragraph and image */
+			}
+
+			.inner img {
+				width: 350px; /* Adjust the image width */
+				height: 350px; /* Make sure height equals width */
+				border-radius: 50%; /* Make the image circular */
+				object-fit: cover; /* Ensure the image fills the circle */
+			}
+		</style>
 	</head>
 	<body class="is-preload">
+		<div class="container">
+			<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="title">Luke Stewart</a>
+					<nav>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html" class="active">About me</a></li>
+							<li><a href="projects.html">Projects</a></li>
+						</ul>
+					</nav>
+				</header>
 
-		<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="title">Luke Stewart</a>
-				<nav>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html" class="active">About me</a></li>
-						<li><a href="projects.html">Projects</a></li>
-					</ul>
-				</nav>
-			</header>
-
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h1 class="major">About me</h1>
-							<p>
-								I am currently a first year PhD student in Biostatistics at the University of Pennsylvania Perelman School of Medicine. Prior to that I was a research assistant to Dr. Chris Foote at the Federal Reserve Bank of Boston after studying economics at MIT. See my CV <a href="stewart_cv.pdf">here</a>.
-							</p>
-							<div class="col-12"><span class="image fit"><img src="images/headshot.jpg" alt="" /></span></div>
-						</div>
-					</section>
-			</div>
+			<!-- Wrapper -->
+				<div id="wrapper">
+					<!-- Main -->
+						<section id="main" class="wrapper">
+							<div class="inner">
+								<h1 class="major">About me</h1>
+								<div class="inner-content">
+									<div class="text-image-container">
+										<img src="images/headshot.jpg" alt="Headshot">
+										<p>
+											I am currently a first year PhD student in Biostatistics at the University of Pennsylvania Perelman School of Medicine. Prior to that I was a research assistant to Dr. Chris Foote at the Federal Reserve Bank of Boston after studying economics at MIT. See my CV <a href="stewart_cv.pdf">here</a>.
+										</p>
+									</div>
+								</div>
+							</div>
+						</section>
+				</div>
+		</div>
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper style">

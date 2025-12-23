@@ -1,0 +1,22 @@
+title: Luke Stewart
+description: Academic website
+url: ""  # optional: https://<username>.github.io
+baseurl: ""  # leave blank for user/organization pages
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+permalink: pretty
+
+# Keep GitHub Pages happy: no custom plugins needed.
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  
+sass:
+  sass_dir: assets/css
+  style: compressed
+  # critical: only process .scss/.sass, not plain .css
+  extensions: [".scss", ".sass"]

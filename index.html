@@ -1,127 +1,59 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Luke Stewart</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+---
+layout: default
+title: About
+---
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">My work</a></li>
-							<li><a href="#two">Get in touch</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+<section class="home-section">
+  <div class="hero">
+    <img class="headshot" src="{{ '/assets/img/headshot.jpg' | relative_url }}" alt="Headshot of Luke Stewart" />
+    <div>
+      <h1>Luke Stewart</h1>
+      <p>I am a second year PhD student in Biostatistics at the University of Pennsylvania and a member of the <a href="https://www.mitrastatslab.com">Mitra Lab</a>. Prior to that I was a research assistant at the Federal Reserve Bank of Boston working with Chris Foote.</p>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+      <div class="pill-row">
+        <a class="pill" href="{{ '/publications/' | relative_url }}">Publications</a>
+        <a class="pill" href="{{ '/assets/cv.pdf' | relative_url }}">CV</a>
+        <a class="pill" href="mailto:Luke.Stewart1@pennmedicine.upenn.edu">Email</a>
+        <a class="pill" href="https://scholar.google.com/citations?user=dRCdHlAAAAAJ&hl=en">Scholar</a>
+        <a class="pill" href="https://github.com/lrstewart2000">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Luke Stewart</h1>
-							<p>First year PhD student in Biostatistics at the University of Pennsylvania.<br>
-								Interested in causal inference in medicine and public health.<br>
-								Formerly MIT economics and research assistant at the Federal Reserve Bank of Boston.</p>
-							<ul class="actions">
-								<li><a href="about.html" class="button scrolly">About me</a></li>
-								<li><a href="projects.html" class="button scrolly">My work</a></li>
-							</ul>
-						</div>
-					</section>
+<section class="home-section">
+  <div class="card">
+    <h2>Research</h2>
+    <p>My interests are constantly evolving, but these days I'm focusing on:</p>
+    <ul>
+      <li>Causal inference in complex, longitudinal settings (primarily using EHR and claims data)</li>
+      <li>Health policy evaluation</li>
+      <li>Simulation frameworks to validate causal inference methods</li>
+    </ul>
+  </div>
+</section>
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<div class="content">
-								<div class="inner">
-									<h2>Impacts of Medicaid expansion on risky health behaviors</h2>
-									<p>Using CDC survey data and modern difference-in-differences methods, I find that expanding Medicaid eligibility may reduce smoking rates among states that expanded eligibility.</p>
-									<ul class="actions">
-										<li><a href="projects.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<div class="content">
-								<div class="inner">
-									<h2>The Impact of the Age Distribution on Unemployment</h2>
-									<p>By constructing an index that reflects broad demographic changes, we find that the changing age distribution of the US has indirect implications for the unemployment rate.</p>
-									<ul class="actions">
-										<li><a href="projects.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<div class="content">
-								<div class="inner">
-									<h2>Geographic disparities in midlife mortality</h2>
-									<p>Work in progress, stay tuned for results!</p>
-									<ul class="actions">
-										<li><a href="projects.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
+<section class="home-section">
+  <div class="card">
+    <h2>Selected Publications</h2>
 
-				<!-- two -->
-					<section id="two" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-								<ul class="contact">
-									<li>
-										<h3>Email</h3>
-										<a href="#">First.Last 1 [at] pennmedicine [dot] upenn [dot] edu</a>
-									</li>
-									<li>
-										<h3>Social</h3>
-										<ul class="icons">
-											<li><a href="https://twitter.com/lukestew_" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-											<li><a href="https://github.com/lrstewart2000" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-											<li><a href="https://www.linkedin.com/in/luke-stewart-7b2067184/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
+    {% assign pubs = site.data.publications | slice: 0, 2 %}
+    {% for p in pubs %}
+      <div class="pub">
+        <div class="pub-title">{{ p.title }}</div>
+        <div class="pub-meta">{{ p.authors }} · {{ p.venue }}</div>
+        {% if p.links %}
+        <div class="pub-links">
+            {% for l in p.links %}
+            <a class="pub-link" href="{{ l.url }}">{{ l.label }}</a>{% unless forloop.last %}<span class="sep">·</span>{% endunless %}
+            {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    {% endfor %}
 
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; All rights reserved. All views are my own and do not reflect those of the Federal Reserve Bank of Boston or the Federal Reserve System.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+    <p style="margin-top:12px;">
+      <a href="{{ '/publications/' | relative_url }}">See all publications →</a>
+    </p>
+  </div>
+</section>

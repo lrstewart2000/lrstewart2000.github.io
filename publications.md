@@ -27,9 +27,9 @@ permalink: /publications/
               {% if p.pages != "" %}<span class="pub-meta">: {{ p.pages }}</span>{% endif %}
             </div>
             <div class="pub-links">
-              {% if p.doi != "" %}
+              <!-- {% if p.doi != "" %}
                 <a class="btn btn-sm" href="https://doi.org/{{ p.doi }}">DOI</a>
-              {% endif %}
+              {% endif %} -->
               {% if p.url != "" %}
                 <a class="btn btn-sm" href="{{ p.url }}">Link</a>
               {% endif %}

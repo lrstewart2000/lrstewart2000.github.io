@@ -14,7 +14,9 @@ title: Teaching
     <ul>
       <li>
         <strong>Biostatistics for Epidemiologic Methods II</strong><br>
-        University of Pennsylvania – Fall 2025 and Spring 2026
+        University of Pennsylvania – Fall 2025 and Spring 2026<br>
+        Guest lecture introducing causal inference.
+        <a href="{{ 'assets/teaching/EPID5270PartII_2026_CausalInferenceIntro.pdf' | relative_url }}">Slides</a>
       </li>
 
       <li>

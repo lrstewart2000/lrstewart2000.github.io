@@ -12,7 +12,6 @@ title: About
 
       <div class="pill-row">
         <a class="pill" href="{{ '/publications/' | relative_url }}">Publications</a>
-        <a class="pill" href="{{ '/assets/cv.pdf' | relative_url }}">CV</a>
         <a class="pill" href="mailto:Luke.Stewart1@pennmedicine.upenn.edu">Email</a>
         <a class="pill" href="https://scholar.google.com/citations?user=dRCdHlAAAAAJ&hl=en">Scholar</a>
         <a class="pill" href="https://github.com/lrstewart2000">GitHub</a>
@@ -41,7 +40,7 @@ title: About
     {% for p in pubs %}
       <div class="pub">
         <div class="pub-title">{{ p.title }}</div>
-        <div class="pub-meta">{{ p.authors }} · {{ p.venue }}</div>
+        <div class="pub-meta">{{ p.authors | join: ", " }} · {{ p.venue }}</div>
         {% if p.links %}
         <div class="pub-links">
             {% for l in p.links %}
